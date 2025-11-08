@@ -1,0 +1,192 @@
+/* --- Reseteo Básico y Fuentes Globales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    color: #E0E0E0; /* Texto claro */
+    overflow: hidden; /* Evita barras de scroll */
+}
+
+/* --- Contenedor Principal --- */
+#presentation-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* --- Estilos de Diapositiva --- */
+.slide {
+    width: 100%;
+    height: 100%;
+    padding: 5vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    /* Por defecto, las diapositivas están ocultas */
+    opacity: 0;
+    visibility: hidden;
+    
+    /* Transición suave para el efecto de fundido */
+    transition: opacity 0.6s ease-in-out, visibility 0.6s;
+
+    /* Centrar contenido con Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* La diapositiva activa es la única visible */
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide-content {
+    max-width: 800px;
+}
+
+/* --- Estilos de Texto --- */
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #BB86FC; /* Color de acento violeta */
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 3.5rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #E0E0E0;
+    font-weight: 300;
+}
+
+.meta {
+    margin-top: 30px;
+    font-style: italic;
+    color: #A0A0A0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+strong {
+    color: #03DAC6; /* Otro color de acento para resaltar */
+}
+
+ul {
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+/* Estilo para viñetas personalizadas */
+ul li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #BB86FC;
+    font-size: 0.8rem;
+    top: 6px;
+}
+
+/* --- Estilos para Bloques Especiales --- */
+.code-block {
+    background-color: #1E1E1E;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.code-block p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+pre {
+    background-color: #1E1E1E;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    white-space: pre-wrap;
+    font-size: 1rem;
+}
+
+.quote {
+    font-style: italic;
+    padding: 15px;
+    border-left: 4px solid #BB86FC;
+    background-color: #2c2c2c;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+}
+
+/* --- Diapositivas de Transición --- */
+.section-break {
+    background: linear-gradient(135deg, #6200EE, #BB86FC);
+}
+.section-break h1, .section-break p {
+    color: #FFFFFF;
+}
+.section-title {
+    font-size: 4rem;
+}
+
+/* --- Botones de Navegación --- */
+.nav-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 0 15px 10px 15px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    transition: background-color 0.3s;
+    user-select: none; /* Evita que se seleccione el texto del botón */
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#prev-btn {
+    left: 20px;
+}
+
+#next-btn {
+    right: 20px;
+}
